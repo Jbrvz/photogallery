@@ -65,7 +65,8 @@ nav a {font-size: 1.5em;}
 h1 {font-size: 3em;}
 h2 {font-size: 2em;}
 
-/*-------------------- Global Styles (Breakpoint:485px📱) ----------------------------------*/
+/*-------------------- Global Styles (Breakpoint:485px) ----------------------------------*/
+
 
 #header h1 {
     color: var(--DarkCyan);
@@ -111,6 +112,7 @@ h2 {font-size: 2em;}
 
 #about p{
     margin: 20px 0;
+    line-height: 140%;
 }
 
 #about p br{
@@ -130,6 +132,7 @@ h2 {font-size: 2em;}
 
 #gallery p{
     margin: 20px 0;
+    line-height: 140%;
 }
 
 .photo-gallery {
@@ -215,68 +218,147 @@ legend {
     display: none;
 }
 
-#contact{
+#contact {
     background-color: var(--Black);
     padding: 0 20px;
 }
 
-#contact h2{
-    font-weight: bold;
+#contact h2,  
+#contact label {
     text-align: center;
     text-transform: uppercase;
-    padding: 20px 0;
     color: var(--White);
 }
 
-#contact p{
-    text-align: center;
-    color: var(--White);
+#contact h2 {
+    font-weight: bold;
+    padding: 20px 0;
+}
+
+#contact p {
     margin-bottom: 20px;
+    color: var(--White);
+    text-align: center;
+}
+
+#contact label {
+    margin-bottom: 10px;
+    display: block;
+    text-align: left;
 }
 
 #contact input,
 #contact textarea {
-    margin: 5px 0;
+    margin-bottom: 20px;
     width: 100%;
-    height: 40px; 
+    height: 56px;
     box-sizing: border-box;
     color: var(--DarkCyan);
     font-weight: 500;
     text-transform: uppercase;
+    padding: 15px 10px;
+    font-weight: bold;
+    font-size: 18px;
 }
 
-#contact label{
-    color: var(--White);
-    text-transform: uppercase;
-}
 
 #contact button {
-    display: block; 
-    margin: 20px auto; 
-    padding: 12px 20px; 
-    text-align: center; 
+    display: block;
+    margin: 15px auto;
+    padding: 15px 20px;
     width: 250px;
     background-color: var(--DarkCyan);
     font-weight: bold;
     text-transform: uppercase;
     color: var(--White);
     border: none;
-    border-radius: 15px;
+    font-size: 18px;
+    border-radius: 18px;
 }
 
+#contact input::placeholder,
+#contact textarea::placeholder {
+    color: var(--DarkCyan);
+    opacity: 1;
+}
+
+.back-to-top {
+    display: inline-block;
+    padding: 15px 15px; 
+    background-color: var(--Black); 
+    color: var(--White); 
+    border: 3px solid var(--White);
+    text-align: center; 
+    position: fixed; 
+    right: 0px; 
+    bottom: 20px; 
+    z-index: 1000;
+    text-decoration: none; 
+}
 
 footer p{
     color: var(--White);
     background-color: var(--Black);
     text-align: center;
     text-transform: uppercase;
+    display: block;
+    padding-top: 30px;
 }
 
 
+/*-------------------- (Breakpoint:880px) ----------------------------------*/
 
+@media (min-width: 880px) {
 
+    #header h1 {
+        text-align: left; 
+        padding: 0 20px;
+    }
 
+    .photo-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
 
+#contact input,
+#contact textarea, 
+#contact label {
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 20px; 
 
+}
 
+#contact button {
+    width: 400px;
+}
 
+}
+
+/*-------------------- (Breakpoint: 1300px) ----------------------------------*/
+
+@media (min-width: 1300px) {
+
+    #header nav {
+        justify-content: right;
+    }
+
+    .photo-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+#contact input,
+#contact textarea, 
+#contact label {
+    max-width: 1000px;
+
+}
+
+#contact button {
+    width: 600px;
+}
+
+}
